@@ -1,0 +1,13 @@
+<div class="app-layout" id="app-layout">
+    <app-navbar-lateral></app-navbar-lateral>
+    <div class="contenedor">
+        <button (click)="fileInput.click()">Añadir PDF</button>
+        <input #fileInput type="file" (change)="onFileSelected($event)" accept="application/pdf"
+            style="display: none;" />
+        <div class="cards-container">
+            <div class="card" *ngFor="let pdf of pdfUrls">
+                <ngx-extended-pdf-viewer [src]="pdf" [height]="'300px'"></ngx-extended-pdf-viewer>
+            </div>
+        </div>
+    </div>
+</div>

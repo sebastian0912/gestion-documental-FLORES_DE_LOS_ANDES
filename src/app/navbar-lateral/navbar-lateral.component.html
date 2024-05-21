@@ -1,0 +1,70 @@
+<div class="navbar-wrapper" style="position: relative; z-index: 1002;">
+    <div class="hamburger" (click)="toggleMenu()">&#9776;</div>
+</div>
+<div class="navbar">
+
+    <ul class="nav-links" [class.active]="isMenuVisible">
+
+        <div class="sidebar-header titulo-header">
+            <h3>Flores de los andes</h3>
+        </div>
+
+        <div class="sidebar-header servicios-header">
+            <h3>Menu</h3>
+        </div>
+
+        <div class="blockLink" class="blockLink" [class.active]="currentRoute === '/home'" routerLink="/home">
+            <img src="../../assets/Img/Navbar/hogar.png" alt="Dashboard" class="icon">
+            <li>Home</li>
+        </div>
+
+        <div class="blockLink" class="blockLink" [class.active]="currentRoute === '/perfil'" class="blockLink" routerLink="/perfil">
+            <img src="../../assets/Img/Navbar/empresario.png" alt="Dashboard" class="icon">
+            <li>Perfil</li>
+        </div>
+
+        <div class="sidebar-header servicios-header">
+            <h3>Servicios</h3>
+        </div>
+
+        <div class="blockLink" class="blockLink" [class.active]="currentRoute === '/usuarios'" class="blockLink" routerLink="/usuarios">
+            <img src="../../assets/Img/Navbar/empleo.png" alt="Dashboard" class="icon">
+            <li>Usuarios</li>
+        </div>
+
+        <div class="blockLink" class="blockLink" [class.active]="currentRoute === '/analisis'" class="blockLink" routerLink="/analisis">
+            <img src="../../assets/Img/Navbar/investigacion.png" alt="Dashboard" class="icon">
+            <li>Análisis</li>
+        </div>
+
+        <li class="blockLink" [class.active]="currentRoute === '/inventario'" (mouseenter)="showSubmenu()" (mouseleave)="hideSubmenu()">
+            <div class="menu-item">
+                <img src="../../assets/Img/Navbar/inventario.png" alt="Dashboard" class="icon">
+                Inventario
+                <span class="dropdown-arrow">&#9660;</span>
+            </div>
+            <ul class="submenu" [class.show]="showInventarioSubmenu">
+                <li routerLink="/lockers">Lockers Iot</li>
+                <li routerLink="/prestamos-recibidos">Prestamo-Recibidos</li>
+            </ul>
+        </li>
+        
+
+        <div class="blockLink" class="blockLink" [class.active]="currentRoute === '/archivo'" class="blockLink" routerLink="/archivo">
+            <img src="../../assets/Img/Navbar/presupuesto.png" alt="Dashboard" class="icon">
+            <li>Archivo</li>
+        </div>
+
+        <div class="blockLink" class="blockLink" [class.active]="currentRoute === '/contabilidad'" class="blockLink" routerLink="/contabilidad">
+            <img src="../../assets/Img/Navbar/administracion.png" alt="Dashboard" class="icon">
+            <li>Contabilidad</li>
+        </div>
+
+        <div class="blockLink cerrar-sesion" routerLink="/">
+            <img src="../../assets/Img/Navbar/cerrar-sesion (1).png" alt="Dashboard" class="icon">
+            <li>Cerrar Sesión</li>
+        </div>
+
+    </ul>
+
+</div>
